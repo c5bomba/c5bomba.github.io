@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Extractor - Browser Extension</title>
+    <style>
+        :root {
+            --primary-color: #007aff;
+            --secondary-color: #5ac8fa;
+            --background-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #6e6e73;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .screenshots {
+            margin: 80px 0;
+        }
+        
+        .screenshots h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .screenshot {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot:hover img {
+            transform: scale(1.03);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #6e6e73;
+        }
+        
+        .privacy-button {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #1d1d1f;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .privacy-button:hover {
+            background-color: #d0d0d0;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icons/icon128.png" alt="Cookie Extractor Logo" class="logo">
+            <h1>Cookie Extractor</h1>
+            <p class="tagline">Easily extract and manage cookies from your browser</p>
+            <a href="#features" class="cta-button">Learn More</a>
+        </header>
+        
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3 class="feature-title">Easy Cookie Extraction</h3>
+                <p>Extract cookies from any website with just one click. Our extension makes it simple to view and manage all cookies stored by your browser.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3 class="feature-title">Copy to Clipboard</h3>
+                <p>Quickly copy cookie data to your clipboard in various formats, ready to use in your development tools or API testing applications.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Privacy Focused</h3>
+                <p>We respect your privacy. Cookie Extractor only accesses cookie data when you explicitly request it and never sends your data to any external servers.</p>
+            </div>
+        </section>
+        
+        <section class="screenshots">
+            <h2>See It In Action</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot">
+                    <img src="1.png" alt="Cookie Extractor Screenshot 1">
+                </div>
+                <div class="screenshot">
+                    <img src="2.png" alt="Cookie Extractor Screenshot 2">
+                </div>
+                <div class="screenshot">
+                    <img src="3.png" alt="Cookie Extractor Screenshot 3">
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2023 Cookie Extractor. All rights reserved.</p>
+            <a href="privacy_policy.html" class="privacy-button">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html> 
